@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>This</title>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+		* {margin:0; padding:0;}
+		#wrap {width:960px; margin:0 auto;padding:10px 0;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<!-- <div class="mmd">111</div> -->
+			<input type="button" value="button" style="float:left;"/>
+			<input type="text" />
+			<div class="">早点吃饭。早点睡觉。么么哒</div>
+		</div>
+		<script type="text/javascript">
+		window.onload = function(){
+			function foo(){
+			    console.log(this.a);
+			}
+			function doFoo(fn){
+			    fn();
+			}
+			function doFoo2(o){
+			    o.foo();
+			}
+			var obj = {
+			    a: 2,
+			    foo: foo
+			};
+			var a = "I'm an a";
+			console.log(window == this);
+			console.log(doFoo(obj.foo));  //I'm an a
+			console.log(doFoo2(obj));    //2
+		}
+		</script>
+	</body>
+</html>
