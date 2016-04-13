@@ -1,34 +1,51 @@
-window.onload = function(){
-    prepareGallery();
-    
-    function showPic(whichPic){
 
-        var placeholder = document.getElementById('placeholder');
+addLoadEvent(prepareGallery);
+
+function addLoadEvent(func){
+    var oldonload = window.onload;
+    if (typeof oldonload != 'function'){
+        window.onload = func;
+    }else{
+        window.onload = function(){
+            oldonload();
+            func();
+        }
+    }
+}
+function showPic(whichPic){
+    if (!document.getElementById('placeholder')){
+        return;
+    }
+
+    var source = whichPic.getAttribute('href');
+    var placeholder = document.getElementById('placeholder');
+    placeholder.setAttribute('src', source);
+
+    if (document.getElementById('description')){
+        
         var descp = document.getElementById('description');
-        var source = whichPic.getAttribute('href');
         var title = whichPic.getAttribute('title');
 
-        placeholder.setAttribute('src', source);
         descp.innerText = title;
     }
-    function prepareGallery(){
-        if (!document.getElementsByTagName){
-            return;
-        }
-        if (!document.getElementById){
-            return;
-        }
-        if (!document.getElementById('imagegallery')){
-            return;
-        }
-        var gallery = document.getElementById('imagegallery');
-        var links = gallery.getElementsByTagName('a');
+    return true;
+}
+function prepareGallery(){
+    if (!document.getElementsByTagName){
+        return;
+    }
+    if (!document.getElementById){
+        return;
+    }
+    if (!document.getElementById('imagegallery')){
+        return;
+    }
+    var gallery = document.getElementById('imagegallery');
+    var links = gallery.getElementsByTagName('a');
 
-        for (var i=0; i<links.length; i++){
-            links[i].onclick = function(){
-                showPic(this);
-                return false;
-            }
+    for (var i=0; i<links.length; i++){
+        links[i].onclick = function(){
+            return !showPic(this);
         }
     }
 }
