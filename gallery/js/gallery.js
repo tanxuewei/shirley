@@ -19,12 +19,13 @@ function showPic(whichPic){
 
     var source = whichPic.getAttribute('href');
     var placeholder = document.getElementById('placeholder');
+    if(placeholder.nodeName != 'IMG') return false;
     placeholder.setAttribute('src', source);
 
     if (document.getElementById('description')){
         
         var descp = document.getElementById('description');
-        var title = whichPic.getAttribute('title');
+        var title = whichPic.getAttribute('title')?whichPic.getAttribute('title'):'';
 
         descp.innerText = title;
     }
