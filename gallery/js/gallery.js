@@ -1,6 +1,6 @@
 
 addLoadEvent(prepareGallery);
-
+addLoadEvent(preparePlaceholder);
 function addLoadEvent(func){
     var oldonload = window.onload;
     if (typeof oldonload != 'function'){
@@ -49,4 +49,16 @@ function prepareGallery(){
             return !showPic(this);
         }
     }
+}
+function preparePlaceholder(){
+    var placeholder = document.createElement('img');
+    placeholder.setAttribute('id', 'placeholder');
+    placeholder.setAttribute('src', 'images/default.jpg');
+    placeholder.setAttribute('alt', 'my image gallery');
+    var description = document.createElement('p');
+    description.setAttribute('id', 'description');
+    var descpText = document.createTextNode('Choose an image');
+    description.appendChild(descpText);
+    document.body.appendChild(placeholder);
+    document.body.appendChild(description);
 }
