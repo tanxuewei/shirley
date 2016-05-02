@@ -1,7 +1,7 @@
 function getNewContent(){
     var request = getHTTPObject();
     if (request){
-        request.open('GET', 'example.txt', true);
+        request.open('GET', 'js/example.txt', true);
         request.onreadystatechange = function(){
             if (request.readyState == 4){
                 var para = document.createElement('p');
