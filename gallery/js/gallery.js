@@ -1,4 +1,8 @@
-
+//和下面的区别
+// window.onload = function(){
+//     prepareGallery();
+//     preparePlaceholder();
+// }
 addLoadEvent(prepareGallery);
 addLoadEvent(preparePlaceholder);
 function addLoadEvent(func){
@@ -59,6 +63,17 @@ function preparePlaceholder(){
     description.setAttribute('id', 'description');
     var descpText = document.createTextNode('Choose an image');
     description.appendChild(descpText);
-    document.body.appendChild(placeholder);
-    document.body.appendChild(description);
+
+    var gallery = document.getElementById('imagegallery');
+    insertAfter(placeholder,gallery);
+    insertAfter(description,placeholder);
+}
+
+function insertAfter(newElement, targetElement){
+    var parent = targetElement.parentNode;
+    if (parent.lastChild == targetElement){
+        parent.appendChild(newElement);
+    }else{
+        parent.insertBefore(newElement, targetElement.nextSibling);
+    }
 }
