@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>面向对象程序设计</title>
+<style>
+* {margin: 0; padding: 0;}
+body { font-size: 14px; background-color: #DDF3F7; color: #333; }
+p{text-align: center;padding:5px 20px;}
+</style>
+</head>
+<body>
+<p style="font-size:20px;">大微</p>
+<p style="font-size:16px;">中微</p>
+<p style="font-size:12px;">小微</p>
+<p style="font-size:12px;transform: scale(0.8);display:block;">微</p>
+<p style="font-size:12px;transform: scale(0.4);display:block;">小小微</p>
+<p style="font-size:12px;transform: scale(0.2);display:block;">小小小微</p>
+<script type="text/javascript">
+    //例子一
+    function Person(name){
+        this.name = name;
+    }
+
+    Person.prototype.getName = function(){
+        return this.name;
+    }
+
+    var person1 = new Person('shirley');
+    person1.name = 'xiaowei';
+    // console.log(person1.constructor);
+    //例子二
+    // function SuperType(){
+    //     this.property = true;
+    // }
+    // SuperType.prototype.getSuperValue = function(){
+    //     return this.property;
+    // }
+
+    // function SubType(){
+    //     this.subproperty = false;
+    // }
+    // SubType.prototype = new SuperType();
+    // SubType.prototype.getSubValue = function(){
+    //     return this.subproperty;
+    // }
+    // var instance = new SubType();
+    // console.log(instance.getSuperValue());
+    //例子三
+    // function SuperType(){
+    //     this.colors = [1,2,3];
+    // }
+    // SuperType.prototype.getSuperValue = function(){
+    //     return this.colors;
+    // }
+
+    // function SubType(){
+    //     SuperType.call(this);
+    // }
+    
+    // var instance1 = new SubType();
+    // instance1.colors.push('black');
+    // console.log(instance1.colors);
+
+    // var instance2 = new SubType();
+    // console.log(instance2.colors);
+    //例子四
+    function SuperType(name){
+        this.name = name || 'xiaowei';
+        this.colors = ['red', 'blue', 'white'];
+    }
+    SuperType.prototype.getSuperName = function(){
+        return this.name;
+    }
+
+    function SubType(){
+        SuperType.call(this);
+    }
+    SubType.prototype = new SuperType();
+    SubType.prototype.getSubValue = function(){
+        return this.subproperty;
+    }
+    var instance = new SubType('shirley');
+</script>
+</body>
+</html>
