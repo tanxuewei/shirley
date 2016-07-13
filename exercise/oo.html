@@ -17,6 +17,19 @@ p{text-align: center;padding:5px 20px;}
 <p style="font-size:12px;transform: scale(0.4);display:block;">小小微</p>
 <p style="font-size:12px;transform: scale(0.2);display:block;">小小小微</p>
 <script type="text/javascript">
+    //小练习
+    if (!('a' in window)){
+       var a = 1;
+    }
+    console.log(a);
+    //每个单词首字母大写
+    function titleCase(str) {
+       return str.split(' ').map(function(item,index,array){
+         return item.charAt(0).toUpperCase()+item.slice(1).toLowerCase();
+       }).join(' ');
+    }
+
+    titleCase("I'm a little tea pot");
     //例子一
     function Person(name){
         this.name = name;
