@@ -145,4 +145,16 @@
     return parent
   }
   window.ADS.prependChild = prependChild
+
+  function bindFunction (obj, func) {
+    return function () {
+      func.apply(obj, arguments)
+    }
+  }
+  window.ADS.bindFunction = bindFunction
+
+  function log (data) {
+    console.log(data)
+  }
+  window.ADS.log = log
 })()

@@ -24,3 +24,17 @@ function initAnchors () {
   }
 }
 initAnchors()
+
+if(!Function.prototype.bind){
+  Function.prototype.bind = function(){
+    var fn = this, args = Array.prototype.slice.call(arguments), object = args.shift();
+    return function(){
+      return fn.apply(object, args.concat(Array.prototype.slice.call(arguments)));
+    }
+  }
+}
+
+function xxx () {
+  console.log(111)
+}
+xxx.bind(this, 1, 'e', { 'name': 'mmd' })

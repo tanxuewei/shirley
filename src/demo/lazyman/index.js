@@ -19,98 +19,98 @@
 // Hi This is Hank!
 // Eat supper
 (function(window, undefined){
-	var taskList = [];
+  var taskList = [];
 
-	function subscribe(){
-		var param = {},
-			args = Array.prototype.slice.call(arguments);
+  function subscribe(){
+    var param = {},
+      args = Array.prototype.slice.call(arguments);
 
-		if (args.length < 1){
-			log('参数不能为空');
-			return;
-		}
-		param.msg = args[0];
-		param.args = args.slice(1);
+    if (args.length < 1){
+      log('参数不能为空');
+      return;
+    }
+    param.msg = args[0];
+    param.args = args.slice(1);
 
-		if (param.msg == 'sleepFirst'){
-			taskList.unshift(param);
-		}else{
-			taskList.push(param);
-		}
-	}
+    if (param.msg == 'sleepFirst'){
+      taskList.unshift(param);
+    }else{
+      taskList.push(param);
+    }
+  }
 
-	function log(log){
-		console.log(log);
-	}
-	function LazyMan(){
+  function log(log){
+    console.log(log);
+  }
+  function LazyMan(){
 
-	}
-	LazyMan.prototype.sleep = function(time){
-		subscribe('sleep', time);
-		return this;
-	}
-	LazyMan.prototype.sleepFirst = function(time){
-		subscribe('sleepFirst', time);
-		return this;
-	}
-	LazyMan.prototype.eat = function(str){
-		subscribe('eat', str);
-		return this;
-	}
+  }
+  LazyMan.prototype.sleep = function(time){
+    subscribe('sleep', time);
+    return this;
+  }
+  LazyMan.prototype.sleepFirst = function(time){
+    subscribe('sleepFirst', time);
+    return this;
+  }
+  LazyMan.prototype.eat = function(str){
+    subscribe('eat', str);
+    return this;
+  }
 
-	function lazyMan(str){
-		log('Hi, This is '+ str + '!');
-		publish();
-	}
+  function lazyMan(str){
+    log('Hi, This is '+ str + '!');
+    publish();
+  }
 
-	function eat(str){
-		log('Eat ' + str + '~');
-		publish();
-	}
+  function eat(str){
+    log('Eat ' + str + '~');
+    publish();
+  }
 
-	function sleep(time){
-		setTimeout(function(){
-			log("Wake up after " + time);
-			publish();
-		}, time)
-	}
+  function sleep(time){
+    setTimeout(function(){
+      log("Wake up after " + time);
+      publish();
+    }, time)
+  }
 
-	function sleepFirst(time){
-		setTimeout(function(){
-			log("Wake up after " + time);
-			publish();
-		}, time)
-	}
+  function sleepFirst(time){
+    setTimeout(function(){
+      log("Wake up after " + time);
+      publish();
+    }, time)
+  }
 
-	function publish(){
-		if (taskList.length>0){
-			run(taskList.shift());
-		}
-	}
+  function publish(){
+    if (taskList.length>0){
+      run(taskList.shift());
+    }
+  }
 
-	function run (option) {
-		var msg = option.msg,
-		args = option.args;
+  function run (option) {
+    var msg = option.msg,
+    args = option.args;
 
-		switch(msg){
-			case "lazyMan": lazyMan.apply(null, args);break;
-			case "eat": eat.apply(null, args);break;
-			case "sleep": sleep.apply(null,args);break;
-			case "sleepFirst": sleepFirst.apply(null,args);break;
-			default:;
-		}
-	}
+    switch(msg){
+      case "lazyMan": lazyMan.apply(null, args);break;
+      case "eat": eat.apply(null, args);break;
+      case "sleep": sleep.apply(null,args);break;
+      case "sleepFirst": sleepFirst.apply(null,args);break;
+      default:;
+    }
+  }
 
-	window.lazyMan1 = function(str){
-		subscribe('lazyMan', str);
-		setTimeout(function(){
-			publish();
-		}, 0);
+  window.lazyMan1 = function(str){
+    subscribe('lazyMan', str);
+    setTimeout(function(){
+      publish();
+    }, 0);
 
-		return new LazyMan();
-	}
+    return new LazyMan();
+  }
 
-	// lazyMan1("Hank");
-	lazyMan1("Hank").sleep(10).eat("dinner")
-	// lazyMan1("Hank").sleepFirst(5).eat("supper")
+  // lazyMan1("Hank");
+  lazyMan1("Hank").sleep(10).eat("dinner")
+  // lazyMan1("Hank").sleepFirst(5).eat("supper")
 })(window);
