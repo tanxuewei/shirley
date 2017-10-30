@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="echarts.min.js"></script>
+  <style type="text/css">
+  img {
+    transition: transform 1s;
+  }
+  img:hover {
+    transform: translateX(2em);
+  }
+  </style>
+</head>
+<body>
+  <img src="business_sys.png" />
+  <svg width="4cm" height="4cm" viewBox="0 0 400 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <rect x="1" y="1" width="26" height="12"
+          fill="true" stroke="#000" />
+  </svg>
+  <div id="main" style="width: 400px;height:400px;margin-left: 100px;"></div>
+  <div>
+    <p>fefef</p>
+    <p>fefef</p>
+    <p>fefef</p>
+    <p>fefef</p>
+    <p>fefef</p>
+    <img src="business_sys.png" id="img"/>
+  </div>
+  <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+              show: false,
+              text: '自定义雷达图'
+            },
+            legend: {
+              itemWidth: 13,
+              itemHeight: 6,
+              color: '#999',
+              itemGap: 60,
+              data: [],
+              bottom: '0'
+            },
+            radar: [
+                {
+                    indicator: [
+                        { text: '安全', max: 150 },
+                        { text: '成本', max: 150 },
+                        { text: '弹性', max: 150 },
+                        { text: '功能', max: 150 },
+                        { text: '运维', max: 150 }
+                    ],
+                    center: ['50%', '50%'],
+                    radius: 150,
+                    startAngle: 90,
+                    splitNumber: 5,
+                    shape: 'circle',
+                    zlevel: 0,
+                    name: {
+                        formatter:'{value}',
+                        textStyle: {
+                            color: '#333',
+                            fontSize: 15
+                        }
+                    },
+                    splitArea: {
+                        areaStyle: {
+                            color: '#fff',
+                            shadowColor: 'rgba(0, 0, 0, 0.5)',
+                            shadowBlur: 8,
+                            opacity: 1
+                        }
+                    },
+                    axisLine: {
+                        lineStyle: {
+                          color: '#dbe0e5'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#dbe0e5',
+                            type: 'dotted'
+                        }
+                    }
+                },
+            ],
+            series: [
+                {
+                    name: '雷达图',
+                    type: 'radar',
+                    itemStyle: {
+                        emphasis: {
+                            // color: 各异,
+                            lineStyle: {
+                                width: 2
+                            }
+                        }
+                    },
+                    // symbolSize: 6,
+                    animationDelay: function (idx) {
+                      // 越往后的数据延迟越大
+                      return idx*300;
+                    },
+                    data: [
+                        {
+                            value: [150, 150, 120, 150, 150],
+                            name: '专属云',
+                            zlevel: 1,
+                            areaStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+                                      offset: 0,
+                                      color: '#135ce5'
+                                    }, {
+                                      offset: 1,
+                                      color: '#4ec1cf'
+                                    }])
+                                }
+                            },
+                            lineStyle: {
+                              normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+                                  offset: 0,
+                                  color: '#135ce5'
+                                }, {
+                                  offset: 1,
+                                  color: '#21bebe'
+                                }]),
+                                shadowColor: 'rgba(51, 141, 197, 0.3)',
+                                shadowBlur: '0 1px 5px 0'
+                              }
+                            },
+                            itemStyle: {
+                              normal: {
+                                borderWidth: 2,
+                                // color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+                                //   offset: 0,
+                                //   color: '#135ce5'
+                                // }, {
+                                //   offset: 1,
+                                //   color: '#21bebe'
+                                // }]),
+                                color: '#4ec1cf',
+                                opacity: 1
+                              },
+                              emphasis: {
+                                color: '#000'
+                              }
+                            },
+                        },
+                        {
+                            // value: [90, 90, 60, 120, 120],
+                            value: [120, 120, 150, 90, 150],
+                            name: '私有云',
+                            zlevel: 2,
+                            areaStyle: {
+                                normal: {
+                                    color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+                                      offset: 0,
+                                      color: '#2839e2'
+                                    }, {
+                                      offset: 1,
+                                      color: '#5f67df'
+                                    }]),
+                                    // shadowBlur: 5,
+                                    opacity: 0.5
+                                }
+                            },
+                            lineStyle: {
+                              normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+                                  offset: 0,
+                                  color: '#2839e2'
+                                }, {
+                                  offset: 1,
+                                  color: '#5f67df'
+                                }]),
+                                opacity: 0.5
+                              }
+                            },
+                            itemStyle: {
+                              normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+                                  offset: 0,
+                                  color: '#2839e2'
+                                }, {
+                                  offset: 1,
+                                  color: '#5f67df'
+                                }])
+                              }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+
+        // 使用刚指定的配置项和数据显示图表。
+        // setTimeout(function() {
+          myChart.setOption(option);
+        // }, 3000)
+    </script>
+
+  <script type="text/javascript">
+    var node = document.getElementById('img')
+      var htmlHeight=document.body.scrollHeight||document.documentElement.scrollHeight;
+          //clientHeight是网页在浏览器中的可视高度，
+      var clientHeight=document.body.clientHeight||document.documentElement.clientHeight;
+      //scrollTop是浏览器滚动条的top位置，
+      var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+    function show() {
+
+      //下面这句主要是获取网页的总高度，主要是考虑兼容性所以把Ie支持的documentElement也写了，这个方法至少支持IE8
+      //通过判断滚动条的top位置与可视网页之和与整个网页的高度是否相等来决定是否加载内容；
+      if(scrollTop + node.offsetTop > htmlHeight){
+           debugger
+      }
+
+      console.log(htmlHeight)
+      console.log(clientHeight)
+      console.log(scrollTop)
+
+      console.log(node.offsetTop)
+    }
+
+    window.onscroll = show
+  </script>
+</body>
+</html>
