@@ -10,15 +10,86 @@
   html, body {
     height: 100%;
   }
+  #wrap {
+    padding: 20px;
+  }
+  p {
+    margin: 15px 0;
+  }
+  .f-red {
+    color: #f00;
+  }
   .m-box {
-    width: 100%;
-    height: 100%;
     display: flex;
     background: #ccc;
+  }
+  .item-1 {
+    width: 100px;
+    height: 100px;
+    background: #ffd200;
+    margin: 10px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+  }
+  .m-box-1 {
+    justify-content: space-between;
+  }
+  
+  .m-box-2 {
+    justify-content: space-around;
+  }
+  .m-box-3 .item-1 {
+    flex: 1;
+  }
+  .m-box-4 {
+    flex-wrap: wrap;
   }
   </style>
 </head>
 <body>
-
+  <div id="wrap">
+    <h3>Flex Demo</h3>
+    <p>1、项目固定高度，固定宽度</p>
+    <div class="m-box">
+      <div class="item-1">1</div>
+      <div class="item-1">2</div>
+      <div class="item-1">3</div>
+      <div class="item-1">4</div>
+    </div>
+    <p>2、项目固定高度，固定宽度(容器设置成<span class="f-red">space-between</span>)</p>
+    <div class="m-box m-box-1">
+      <div class="item-1">1</div>
+      <div class="item-1">2</div>
+      <div class="item-1">3</div>
+      <div class="item-1">4</div>
+    </div>
+    <p>3、项目固定高度，固定宽度(容器设置成<span class="f-red">space-around</span>)</p>
+    <div class="m-box m-box-2">
+      <div class="item-1">1</div>
+      <div class="item-1">2</div>
+      <div class="item-1">3</div>
+      <div class="item-1">4</div>
+    </div>
+    <p>5、项目固定高度，固定宽度(容器设置成<span class="f-red">wrap</span>)</p>
+    <div class="m-box m-box-4">
+      <div class="item-1">1</div>
+      <div class="item-1">2</div>
+      <div class="item-1">3</div>
+      <div class="item-1">4</div>
+      <div class="item-1">5</div>
+      <div class="item-1">6</div>
+      <div class="item-1">7</div>
+      <div class="item-1">8</div>
+    </div>
+    <p>4、项目设置成flex: 1;(此时宽度不起作用)</p>
+    <div class="m-box m-box-3">
+      <div class="item-1">1</div>
+      <div class="item-1">2</div>
+      <div class="item-1">3</div>
+      <div class="item-1">4</div>
+    </div>
+  </div>
 </body>
 </html>

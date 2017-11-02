@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>圣杯布局</title>
+</head>
+<style type="text/css">
+  * {
+    padding: 0;
+    margin:  0;
+  }
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  header, footer { height: 150px; flex: 0 1 auto; }
+  header {  background: #333; }
+  footer { background: #666; }
+  .container { display: flex; flex: 1;  }
+  .m-center { flex: 1; display: flex; flex-flow: row wrap; align-content: flex-start;}
+  .m-left, .m-right { flex: 0 0 200px; background: #f00; }
+  .m-left { order: -1; }
+  .item { flex: 0 0 25%; border: 1px solid #8a8; height: 50px; box-sizing: border-box;}
+
+  .pip {
+    width: 24px;
+    height: 24px;
+    background: #333;
+    border-radius: 50%;
+    margin: 4px;
+    display: block;
+    box-shadow: inset 0 3px #111, inset 0 -3px #555;
+  }
+
+  [class$="face"] {
+    margin: 16px;
+    padding: 4px;
+    background: #e7e7e7;
+    width: 104px;
+    height: 104px;
+    object-fit: contain;
+    box-shadow: inset 0 5px #fff, inset 0 -5px #bbb, inset 5px 0 #d7d7d7, inset -5px 0 #d7d7d7;
+    border-radius: 10%;
+    float: left;
+  }
+
+  .first-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .second-face {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .second-face .pip:nth-of-type(2) {
+    align-self: flex-end;
+  }
+
+  .third-face {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .third-face .pip:nth-of-type(2) {
+    align-self: center;
+  }
+
+  .third-face .pip:nth-of-type(3) {
+    align-self: flex-end;
+  }
+
+  .fourth-face, .sixth-face{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .fourth-face .column, .sixth-face .column {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+
+  .fifth-face {
+    display: flex;
+    justify-content: space-between;
+  }
+  .fifth-face .column {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+
+  .fifth-face .column:nth-of-type(2) {
+    justify-content: center;
+  }
+</style>
+<body>
+  <header>
+    <div class="first-face">
+      <span class="pip"></span>
+    </div>
+    <div class="second-face">
+      <span class="pip"></span>
+      <span class="pip"></span>
+    </div>
+    <div class="third-face">
+      <span class="pip"></span>
+      <span class="pip"></span>
+      <span class="pip"></span>
+    </div>
+    <div class="fourth-face">
+      <div class="column">
+        <span class="pip"></span>
+        <span class="pip"></span>
+      </div>
+      <div class="column">
+        <span class="pip"></span>
+        <span class="pip"></span>
+      </div>
+    </div>
+    <div class="fifth-face">
+      <div class="column">
+        <span class="pip"></span>
+        <span class="pip"></span>
+      </div>
+      <div class="column">
+        <span class="pip"></span>
+      </div>
+      <div class="column">
+        <span class="pip"></span>
+        <span class="pip"></span>
+      </div>
+    </div>
+    <div class="sixth-face">
+      <div class="column">
+        <span class="pip"></span>
+        <span class="pip"></span>
+        <span class="pip"></span>
+      </div>
+      <div class="column">
+        <span class="pip"></span>
+        <span class="pip"></span>
+        <span class="pip"></span>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="m-left">left</div>
+    <div class="m-center">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <div class="m-right">right</div>
+  </div>
+  <footer>footer</footer>
+</body>
+</html>

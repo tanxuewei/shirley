@@ -2,32 +2,92 @@
 <html>
 <head>
   <title></title>
+  <!--[if lte IE 8]><script>
+    var ie = 8;
+  </script><![endif]-->
   <script type="text/javascript" src="echarts.min.js"></script>
+  <!-- <script type="text/javascript" src="echarts.js"></script> -->
+  <!-- <script type="text/javascript" src="echarts-all.js"></script> -->
   <style type="text/css">
+  body {
+    padding: 100px;
+  }
   img {
+    width: 200px;
+    height: 200px;
     transition: transform 1s;
+    /* transform: rotate(45deg); */
   }
   img:hover {
-    transform: translateX(2em);
+    transform: translateY(-10px);
   }
   </style>
 </head>
 <body>
-  <img src="business_sys.png" />
-  <svg width="4cm" height="4cm" viewBox="0 0 400 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <rect x="1" y="1" width="26" height="12"
-          fill="true" stroke="#000" />
-  </svg>
-  <div id="main" style="width: 400px;height:400px;margin-left: 100px;"></div>
-  <div>
-    <p>fefef</p>
-    <p>fefef</p>
-    <p>fefef</p>
-    <p>fefef</p>
-    <p>fefef</p>
-    <img src="business_sys.png" id="img"/>
-  </div>
+  <!-- <img src="pic.jpg" /> -->
+  <!-- <canvas id="canvas"></canvas> -->
+  <script type="text/javascript">
+    // function draw() {
+    //   var ctx = document.getElementById('canvas').getContext('2d');
+
+    //   // Create gradients
+    //   var lingrad = ctx.createLinearGradient(0,0,0,150);
+    //   lingrad.addColorStop(0, '#00ABEB');
+    //   lingrad.addColorStop(0.5, '#fff');
+    //   lingrad.addColorStop(0.5, '#26C000');
+    //   lingrad.addColorStop(1, '#fff');
+
+    //   var lingrad2 = ctx.createLinearGradient(0,50,0,95);
+    //   lingrad2.addColorStop(0.5, '#000');
+    //   lingrad2.addColorStop(1, '#f00');
+
+    //   // assign gradients to fill and stroke styles
+    //   ctx.fillStyle = lingrad;
+    //   ctx.strokeStyle = lingrad2;
+      
+    //   // draw shapes
+    //   ctx.fillRect(10,10,130,130);
+    //   ctx.strokeRect(50,50,50,50);
+
+    // }
+    function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+
+  // 创建渐变
+  var radgrad = ctx.createRadialGradient(45,45,10,52,50,30);
+  radgrad.addColorStop(0, '#A7D30C');
+  radgrad.addColorStop(0.9, '#019F62');
+  radgrad.addColorStop(1, 'rgba(1,159,98,0)');
+  
+  var radgrad2 = ctx.createRadialGradient(105,105,20,112,120,50);
+  radgrad2.addColorStop(0, '#FF5F98');
+  radgrad2.addColorStop(0.75, '#FF0188');
+  radgrad2.addColorStop(1, 'rgba(255,1,136,0)');
+
+  var radgrad3 = ctx.createRadialGradient(95,15,15,102,20,40);
+  radgrad3.addColorStop(0, '#00C9FF');
+  radgrad3.addColorStop(0.8, '#00B5E2');
+  radgrad3.addColorStop(1, 'rgba(0,201,255,0)');
+
+  var radgrad4 = ctx.createRadialGradient(0,150,50,0,140,90);
+  radgrad4.addColorStop(0, '#F4F201');
+  radgrad4.addColorStop(0.8, '#E4C700');
+  radgrad4.addColorStop(1, 'rgba(228,199,0,0)');
+  
+  // 画图形
+  ctx.fillStyle = radgrad4;
+  ctx.fillRect(0,0,150,150);
+  ctx.fillStyle = radgrad3;
+  ctx.fillRect(0,0,150,150);
+  ctx.fillStyle = radgrad2;
+  ctx.fillRect(0,0,150,150);
+  ctx.fillStyle = radgrad;
+  ctx.fillRect(0,0,150,150);
+}
+    draw()
+  </script>
+  <div id="main" style="width: 280px;height:350px;margin-left: 100px;">
+  <!-- </div> -->
   <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
@@ -56,7 +116,7 @@
                         { text: '运维', max: 150 }
                     ],
                     center: ['50%', '50%'],
-                    radius: 150,
+                    radius: 100,
                     startAngle: 90,
                     splitNumber: 5,
                     shape: 'circle',
@@ -71,8 +131,8 @@
                     splitArea: {
                         areaStyle: {
                             color: '#fff',
-                            shadowColor: 'rgba(0, 0, 0, 0.5)',
-                            shadowBlur: 8,
+                            shadowColor: 'rgba(0, 0, 0, 0.4)',
+                            // shadowBlur: 3,
                             opacity: 1
                         }
                     },
@@ -93,7 +153,11 @@
                 {
                     name: '雷达图',
                     type: 'radar',
+                    silent: true,
                     itemStyle: {
+                        normal: {
+                            borderWidth: 2,
+                        },
                         emphasis: {
                             // color: 各异,
                             lineStyle: {
@@ -104,48 +168,48 @@
                     // symbolSize: 6,
                     animationDelay: function (idx) {
                       // 越往后的数据延迟越大
-                      return idx*300;
+                      return idx*100;
                     },
                     data: [
                         {
                             value: [150, 150, 120, 150, 150],
                             name: '专属云',
-                            zlevel: 1,
+                            silent: true,
                             areaStyle: {
                                 normal: {
                                     color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
                                       offset: 0,
-                                      color: '#135ce5'
+                                      color: 'rgba(19, 92, 229, 0.8)'
                                     }, {
                                       offset: 1,
-                                      color: '#4ec1cf'
-                                    }])
-                                }
+                                      color: 'rgba(33, 190, 190, 0.8)'
+                                    }]),
+                                    opacity: 1
+                                },
                             },
                             lineStyle: {
                               normal: {
                                 color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
                                   offset: 0,
-                                  color: '#135ce5'
+                                  color: 'rgba(19, 92, 229, 0.8)'
                                 }, {
                                   offset: 1,
-                                  color: '#21bebe'
+                                  color: 'rgba(33, 190, 190, 0.8)'
                                 }]),
+                                opacity: 1,
                                 shadowColor: 'rgba(51, 141, 197, 0.3)',
                                 shadowBlur: '0 1px 5px 0'
                               }
                             },
                             itemStyle: {
                               normal: {
-                                borderWidth: 2,
-                                // color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
-                                //   offset: 0,
-                                //   color: '#135ce5'
-                                // }, {
-                                //   offset: 1,
-                                //   color: '#21bebe'
-                                // }]),
-                                color: '#4ec1cf',
+                                color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
+                                  offset: 0,
+                                  color: 'rgba(19, 92, 229, 0.8)'
+                                }, {
+                                  offset: 1,
+                                  color: 'rgba(33, 190, 190, 0.8)'
+                                }]),
                                 opacity: 1
                               },
                               emphasis: {
@@ -157,41 +221,46 @@
                             // value: [90, 90, 60, 120, 120],
                             value: [120, 120, 150, 90, 150],
                             name: '私有云',
-                            zlevel: 2,
+                            ilent: true,
+                            symbolSize: 2.5,
                             areaStyle: {
                                 normal: {
                                     color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
                                       offset: 0,
-                                      color: '#2839e2'
+                                      color: 'rgba(40, 57, 226, 0.5)'
                                     }, {
                                       offset: 1,
-                                      color: '#5f67df'
+                                      color: 'rgba(40, 57, 226, 0)'
                                     }]),
                                     // shadowBlur: 5,
-                                    opacity: 0.5
+                                    opacity: 1
                                 }
                             },
                             lineStyle: {
                               normal: {
                                 color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
                                   offset: 0,
-                                  color: '#2839e2'
+                                  color: 'rgba(40, 57, 226, 0.5)'
                                 }, {
                                   offset: 1,
-                                  color: '#5f67df'
+                                  color: 'rgba(40, 57, 226, 0)'
                                 }]),
-                                opacity: 0.5
+                                // shadowBlur: 5,
+                                opacity: 1
                               }
                             },
                             itemStyle: {
                               normal: {
+                                borderWidth: 4,
                                 color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
                                   offset: 0,
-                                  color: '#2839e2'
+                                  color: 'rgba(40, 57, 226, 0.5)'
                                 }, {
                                   offset: 1,
-                                  color: '#5f67df'
-                                }])
+                                  color: 'rgba(40, 57, 226, 0)'
+                                }]),
+                                // shadowBlur: 5,
+                                opacity: 1
                               }
                             }
                         }
@@ -218,7 +287,7 @@
       //下面这句主要是获取网页的总高度，主要是考虑兼容性所以把Ie支持的documentElement也写了，这个方法至少支持IE8
       //通过判断滚动条的top位置与可视网页之和与整个网页的高度是否相等来决定是否加载内容；
       if(scrollTop + node.offsetTop > htmlHeight){
-           debugger
+           
       }
 
       console.log(htmlHeight)
