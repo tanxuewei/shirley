@@ -1,8 +1,3 @@
-/*
-* @description:  路由实现
-* @author:  Shirley(hztanxuewei@corp.netease.com)
-* @createTime:  2017-08-23, 09:47:54
-*/
 (function() {
     var util = {
         //获取路由的路径和详细参数
