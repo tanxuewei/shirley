@@ -44,10 +44,11 @@ class App extends Component {
     this.state = {
       history: [{
         squares: Array(9).fill(null),
-        clickedLocation: [0, 0]
+        lastStep: 'Game start'
       }],
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true,
+      sort: false
     }
   }
 
@@ -58,11 +59,13 @@ class App extends Component {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O'
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    const location = '('+ (Math.floor(i / 3)+1) + ',' + ((i % 3)+1) + ')';
+    const desc = squares[i] + ' moved to ' + location;
     this.setState({
       history: history.concat([{
         squares: squares,
-        clickedLocation: [Math.floor(i / 3) + 1, i % 3 + 1],
+        lastStep: desc,
       }]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext
@@ -76,16 +79,24 @@ class App extends Component {
     })
   }
 
+  toggleSort () {
+    this.setState({
+      sort: !this.state.sort
+    })
+  }
+
   render() {
-    const history = this.state.history;
+    let history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares)
 
+    if (this.state.sort) {
+      history = this.state.history.slice();
+      history.reverse()
+    }
+
     const moves = history.map((step, move) => {
-      const clickedLocation = step.clickedLocation;
-      const desc = move ?
-        'Move #' + move + '(' + clickedLocation[0] + ',' + clickedLocation[1] + ')' :
-        'Game start';
+      const desc = step.lastStep;
 
       if (move == this.state.stepNumber) {
         return (
@@ -118,8 +129,9 @@ class App extends Component {
           />
         </div>
         <div className="game-info">
-        <div>{status}</div>
-        <ol>{moves}</ol>
+          <div>{status}</div>
+          <button onClick={() => this.toggleSort()}>Sort</button>
+          <ol>{moves}</ol>
         </div>
       </div>
     );
