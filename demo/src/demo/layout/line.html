@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>0.5px线</title>
+  <style type="text/css">
+  .line {
+    width: 100px;
+    height: 100px;
+    transform: scale(0.5);
+    position: relative;
+    border: 1px solid #000;
+    box-sizing: border-box;
+  }
+  .line::before {
+    /* width: 100px; */
+    height: 1px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+  }
+  </style>
+</head>
+<body>
+  <div class="line">
+    
+  </div>
+</body>
+</html>
