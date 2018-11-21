@@ -12,5 +12,4 @@ define(function (require, exports, module) {
     add: add
   }
   module.exports.add = add
-  console.log(module)
 })
