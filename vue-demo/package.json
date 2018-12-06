@@ -1,0 +1,15 @@
+{
+  "name": "vue-demo",
+  "version": "1.0.0",
+  "description": "a vue demo",
+  "author": "shirley",
+  "scripts": {
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    
+  }
+}
