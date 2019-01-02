@@ -284,3 +284,45 @@ setTimeout(function() {
 }, 20);
 
 fn1();
+
+/* ---- */
+function F () {
+  function C () {
+    console.log(this)
+    return this
+  }
+
+  return C()
+}
+
+var o = new F()
+
+
+function c () {
+  this.a = 1
+  return false
+}
+
+console.log(typeof new c())
+
+var arr = [1, 2, [1, 2]]
+arr.sort()
+arr.join('--')
+console.log(arr)
+
+function MyString (str) {
+  this.str = str
+  this.length = str.split('').length
+}
+
+MyString.prototype.toString = function () {
+  return this.str
+}
+
+MyString.prototype.value = function () {
+  return this.str
+}
+
+var str = new MyString('hello')
+console.log(str.length)
+console.log(str.toString())

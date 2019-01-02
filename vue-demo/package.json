@@ -4,12 +4,21 @@
   "description": "a vue demo",
   "author": "shirley",
   "scripts": {
-    "start": "npm run dev"
+    "start": "cross-env NODE_ENV=development node webpack/dev.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanxuewei/shirley.git"
+  },
+  "license": "MIT",
   "dependencies": {
-    
+    "vue": "^2.5.17",
+    "webpack": "^4.27.1"
   },
   "devDependencies": {
-    
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "cross-env": "^5.2.0"
   }
 }
