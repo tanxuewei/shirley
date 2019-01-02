@@ -4,7 +4,8 @@
   "description": "a vue demo",
   "author": "shirley",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node webpack/dev.js"
+    "start": "cross-env NODE_ENV=development webpack",
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -12,13 +13,25 @@
   },
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.5.17",
-    "webpack": "^4.27.1"
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
-    "cross-env": "^5.2.0"
+    "babel-loader": "^8.0.4",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "url-loader": "^1.1.2",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
   }
 }
