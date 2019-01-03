@@ -9,7 +9,7 @@ module.exports = {
     app: './src/main.js'
   },
   output: {
-    filename: 'bundle.js',
+    filename: 'js/[name].js',
     path: resolve(__dirname, './dist')
   },
   resolve: {
@@ -62,10 +62,26 @@ module.exports = {
     new VueLoaderPlugin(),
     // new UglifyJsPlugin()
     new HtmlwebpackPlugin({
-      title: 'vuevuevue',
       filename: 'index.html',
       template: 'index.html',
       inject: true
-    })
-  ]
+    }),
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     'NODE_ENV': JSON.stringify('development')
+    //   }
+    // })
+  ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          name: 'vendor',
+          chunks: 'initial',
+          priority: -10,
+          test: /[\\/]node_modules[\\/]/
+        }
+      }
+    }
+  }
 }
