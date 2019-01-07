@@ -19,6 +19,7 @@ module.exports = {
       '@': resolve('src')
     }
   },
+  mode: process.env.NODE_ENV !== 'production' ? 'development' : 'production',
   devtool: process.env.NODE_ENV !== 'production' ? 'eval-source-map' : false,
   watch: process.env.NODE_ENV !== 'production',
   module: {
