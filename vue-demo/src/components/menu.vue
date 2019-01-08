@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'menu',
+  name: 'cmenu',
   data () {
     return {
       menus: [

@@ -1,6 +1,7 @@
 <template>
 <div class="body">
   Hello, World3!
+  <button @click="increment">我是一个button</button>
   <img :src="imgUrl" />
   <Menu/>
   <router-view></router-view>
@@ -19,6 +20,12 @@ export default {
   data () {
     return {
       imgUrl: ts
+    }
+  },
+  methods: {
+    increment () {
+      this.$store.commit('increment')
+      console.log(this.$store.state.count)
     }
   }
 }
