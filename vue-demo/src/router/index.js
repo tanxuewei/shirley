@@ -11,10 +11,15 @@ export default new Router({
     }, {
       path: '/service',
       component: () => import('@/module/service')
-    },
-    {
+    }, {
       path: '/business',
       component: () => import('@/module/business')
+    }, {
+      path: '/cart',
+      component: () => import('@/module/cart')
+    }, {
+      path: '/product',
+      component: () => import('@/module/product')
     }
   ]
 })

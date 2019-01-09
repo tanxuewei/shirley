@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { mutations } from './mutations'
 import actions from './actions'
+import cart from './modules/cart'
+import products from './modules/product'
 
 Vue.use(Vuex)
 
@@ -32,6 +34,10 @@ const store = new Vuex.Store({
     getTodoById: (state) => (id) => {
       return state.todos.find(todo => todo.id === id)
     }
+  },
+  modules: {
+    cart,
+    products
   }
 })
 
