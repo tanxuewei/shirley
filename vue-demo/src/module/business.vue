@@ -28,13 +28,14 @@ export default {
   },
   methods: {
     // 直接映射为store.commit
-    ...mapMutations([
-      'increment'
-    ]),
+    // ...mapMutations([
+    //   'INCREMENT_COUNT'
+    // ]),
     // incrementAsync () {
     //   this.$store.dispatch('incrementAsync')
     // },
     ...mapActions([
+      'increment',
       'incrementAsync'
     ])
   }

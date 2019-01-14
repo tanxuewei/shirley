@@ -1,5 +1,7 @@
+import { INCREMENT_COUNT } from './mutation-types'
+
 export const mutations = {
-  increment (state) {
+  [INCREMENT_COUNT] (state) {
     state.count++
   }
 }

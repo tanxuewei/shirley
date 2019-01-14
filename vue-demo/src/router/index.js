@@ -20,6 +20,9 @@ export default new Router({
     }, {
       path: '/product',
       component: () => import('@/module/product')
+    }, {
+      path: '/score',
+      component: () => import('@/module/score')
     }
   ]
 })

@@ -5,6 +5,9 @@
   <body>
     <div id="app">
       <p>{{word}}</p>
+      <button v-on:click="sayHi">change model</button>
+      <p>{{msg.name}}</p>
+      <button v-on:click="alertMsg">change msg</button>
     </div>
     <script src="js/compile.js"></script>
     <script src="js/mvvm.js"></script>
@@ -14,11 +17,21 @@
       var vm = new MVVM({
         el: '#app',
         data: {
-          word: 'Hello World!'
+          word: 'Hello World!',
+          msg: {
+            name: 'haipa'
+          }
         },
         methods: {
           sayHi: function () {
-            this.word = 'Hi, wverybody!';
+            this.word = 'Hi, everybody!';
+
+            // setTimeout(() => {
+            //   this.word = '3个'
+            // }, 1000)
+          },
+          alertMsg: function () {
+            this.msg.name = 'xxx'
           }
         }
       })
@@ -35,7 +48,6 @@
         }
         return temp
       }
-      '"><h1>11111
 
       console.log(add(2)(3) + 1)
     </script>

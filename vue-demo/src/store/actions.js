@@ -1,10 +1,12 @@
+import { INCREMENT_COUNT } from './mutation-types'
+
 export default {
   increment ({ commit }) {
-    commit('increment')
+    commit(INCREMENT_COUNT)
   },
   incrementAsync ({ commit }) {
     setTimeout(() => {
-      commit('increment')
+      commit(INCREMENT_COUNT)
     }, 1000)
   }
 }

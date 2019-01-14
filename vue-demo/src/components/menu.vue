@@ -33,6 +33,9 @@ export default {
         }, {
           name: '产品',
           href: '/product'
+        }, {
+          name: '答题',
+          href: '/score'
         }
       ]
     }
