@@ -4,6 +4,9 @@ function Watcher (vm, exp, cb) {
   this.exp = exp;
   this.depIds = {}
   // 此处为了触发属性的getter，从而在dep添加自己，结合Observer更易理解
+
+  this.getter = this.parseGetter(exp);
+
   this.value = this.get();
 }
 
@@ -27,8 +30,22 @@ Watcher.prototype = {
   },
   get: function () {
     Dep.target = this;
-    var value = this.vm[this.exp]
+    var value = this.getter.call(this.vm, this.vm)
     Dep.target = null;
     return value;
-  }
+  },
+
+  parseGetter: function(exp) {
+    if (/[^\w.$]/.test(exp)) return; 
+
+    var exps = exp.split('.');
+
+    return function(obj) {
+        for (var i = 0, len = exps.length; i < len; i++) {
+            if (!obj) return;
+            obj = obj[exps[i]];
+        }
+        return obj;
+    }
+}
 }

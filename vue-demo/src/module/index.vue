@@ -1,5 +1,8 @@
 <template>
-  <div>{{ msg }}</div>
+  <div>
+    {{ msg }}
+    <router-link :to="'/cart'">购物车</router-link>
+  </div>
 </template>
 
 <script>

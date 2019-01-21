@@ -1,4 +1,4 @@
-class Router {
+class historyRouter {
   constructor () {
     this.routes = {}
 
@@ -7,12 +7,13 @@ class Router {
   }
 
   init (path) {
-    history.replaceState({ path: path}, null, path)
+    history.replaceState({ path: path }, null, path)
     this.routes[path] && this.routes[path]()
   }
 
-  route (path, callback) {
-    this.routes[path] = callback || function () {}
+  // 添加路由
+  route (path, cb) {
+    this.routes[path] = cb || function () {}
   }
 
   go (path) {
@@ -28,32 +29,30 @@ class Router {
   }
 }
 
-const router = new Router()
-router.init(location.pathname)
-
-const content = document.querySelector('body')
-const ul = document.querySelector('#history')
-
 function changeBgColor (color) {
-  content.style.backgroundColor = color
+  document.body.style.backgroundColor = color || 'red'
   return color
 }
 
-router.route('/', function () {
+const router = new historyRouter()
+router.init(location.pathname)
+
+router.route('/', () => {
   changeBgColor('red')
 })
 
-router.route('/blue', function () {
+router.route('/blue', () => {
   changeBgColor('blue')
 })
 
-router.route('/green', function () {
+router.route('/green', () => {
   changeBgColor('green')
 })
 
+const ul = document.querySelector('#history')
 ul.addEventListener('click', e => {
-  if (e.target.tagName === 'A') {
-    e.preventDefault();
+  e.preventDefault()
+  if (e.target.tagName == 'A') {
     router.go(e.target.getAttribute('href'))
   }
 })
