@@ -1,8 +1,8 @@
-console.log('加载了add模块')
+console.log('加载了add1模块')
 
 var add = function (x, y) {
   return x + y
 }
-var a = 10
+var b = 10
 
-export { add, a }
+export { add, b }

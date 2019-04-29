@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Transform</title>
+  <link href="./reset.css" rel="stylesheet" />
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ccc;
+    }
+
+    .box1 {
+      margin-bottom: 50px;
+    }
+
+    .box2 {
+      margin-top: 50px;
+    }
+
+    .blue,
+    .red-inner {
+      height: 50px;
+      margin: 10px 0;
+    }
+
+    .blue {
+      background: blue;
+    }
+
+    .red-outer {
+      overflow: hidden;
+      background: red;
+    }
+
+    .outer {
+      border: 5px dotted rgb(214, 129, 137);
+      border-radius: 5px;
+      width: 450px;
+      padding: 10px;
+      margin-bottom: 40px;
+    }
+
+    .float {
+      padding: 10px;
+      border: 5px solid rgba(214, 129, 137, .4);
+      border-radius: 5px;
+      background-color: rgba(233, 78, 119, .4);
+      color: #fff;
+      float: left;
+      width: 200px;
+      margin: 0 20px 0 0;
+    }
+    </style>
+</head>
+
+<body>
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+  <div class="box box4"></div>
+  <!-- 1、overflow不为visible，外边距合并 -->
+  <div class="blue"></div>
+  <div class="red-outer">
+    <div class="red-inner">red inner</div>
+  </div>
+
+  <div class="outer">
+    <div class="float">I am a floated element.</div>
+    <p>I am text inside the outer box.I am text inside the outer box.I am text inside the outer box.I am text inside the outer box.I am text inside the outer box.I am text inside the outer box.I am text inside the outer box.I am text inside the outer box.I am text inside the outer box.</p>
+  </div>
+</body>
+
+</html>

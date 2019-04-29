@@ -17,6 +17,7 @@
 
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-proposal-json-strings"
+    "@babel/plugin-proposal-json-strings",
+    "transform-vue-jsx"
   ]
 }

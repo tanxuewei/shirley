@@ -1,10 +1,12 @@
 <template>
 <div class="body">
-  Hello, World3!
+  <!-- Hello, World3!
   <button @click="increment">我是一个button</button>
-  <img :src="imgUrl" />
+  <img :src="imgUrl" /> -->
   <Menu/>
-  <router-view></router-view>
+  <div class="main">
+    <router-view></router-view>
+  </div>
 </div>
 </template>
 
@@ -35,10 +37,15 @@ console.log('我是vue')
 <style lang="less" scoped>
 .body {
   font-size: 20px;
+  display: flex;
 }
 
 img {
   width: 20px;
   height: 20px;
+}
+
+.main {
+  flex: 1;
 }
 </style>

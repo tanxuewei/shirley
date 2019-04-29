@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flex-三列布局</title>
+  <style>
+  .wrap {
+    display: flex;
+    width: 300px;
+  }
+
+  .box-1 {
+    flex: 1;
+    background: blue;
+  }
+
+  .box-2 {
+    width: 200px;
+    background: #ccc;
+  }
+
+  .box-3 {
+    flex: 2;
+    background: #f00;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="box-1">a</div>
+    <div class="box-2">b</div>
+    <div class="box-3">c</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>基础</title>
+    <style>
+    .main {
+      padding: 30px;
+      background: #eee;
+    }
+
+    .target {
+      background: #f00;
+    }
+    </style>
+</head>
+<body>
+<div>
+  <script src="defer1.js" defer></script>
+  <script src="defer2.js" defer></script>
+  <div class="main" id="main">
+    <div class="target">
+      哈哈哈
+    </div>
+  </div>
+  <div class="main1" id="main1">
+    <div>
+      <img src="https://nos.netease.com/cloud-website-bucket/20190214102019bbfcde2f-7541-48ae-94ff-3076acbb76b1.jpeg"/>
+      哈哈哈
+    </div>
+  </div>
+  <script>
+    console.log('我是第一个安静善良的script')
+  </script>
+  <script>
+    var node1 = document.getElementById('main1')
+    console.log('我是html里的script')
+  </script>
+  <script src="index.js"></script>
+</div>
+</body>
+</html>

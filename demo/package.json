@@ -5,7 +5,8 @@
   "author": "shirley <tanxuewei94@126.com>",
   "private": true,
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "es": "node src/Module/es6module/webpack/webpack.config.js"
   },
   "dependencies": {
     "express": "^4.12.3",

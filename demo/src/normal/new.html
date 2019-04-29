@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New, bind, call, apply</title>
+</head>
+<body>
+  <script>
+  function Otaku (nam) {
+    this.name = name
+  }
+
+  Otaku.prototype.getName = function () {
+    return this.name
+  }
+
+  function objectFactory () {
+    var obj = new Object()
+    Constructor = [].shift.call(arguments) // 取出第一个参数
+    obj.__proto__ = Constructor.prototype
+    var ret = Constructor.apply(obj, arguments)
+    return typeof ret === 'object' ? ret : obj
+  }
+  var person = objectFactory(Otaku, 'shirley')
+  // console.log(person.getName())
+
+  // bind
+  Function.prototype.bind2 = function (context) {
+    if (typeof this !== "function") {
+      throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
+    }
+
+    var self = this
+    var args = Array.prototype.slice.call(arguments, 1)
+
+    var fNOP = function () {}
+
+    var fBound = function () {
+      var bindArgs = Array.prototype.slice.call(arguments)
+      return self.apply(this instanceof fNOP ? this : context, args.concat(bindArgs))
+    }
+
+    fNOP.protptype = this.prototype
+    fBound.prototype = new fNOP()
+    return fBound
+  }
+
+  Function.prototype.bind3 = function (context) {
+    var self = this
+    var args = Array.prototype.slice.call(arguments, 1)
+
+    var fBound = function () {
+      var bindArgs = Array.prototype.slice.call(arguments)
+      return self.apply(this instanceof fBound ? this : context, args.concat(bindArgs))
+    }
+
+    fBound.prototype = this.prototype
+    return fBound
+  }
+
+  var value = 2
+
+  var foo = {
+    value: 1
+  }
+
+  function bar (name, age) {
+    this.habit = 'shopping'
+    console.log(this.value)
+    console.log(name)
+    console.log(age)
+  }
+
+  bar.prototype.friend = 'kevin'
+
+  var bindFoo = bar.bind3(foo, 'shirley')
+  var obj = objectFactory(bindFoo, '18')
+  console.log(obj.habit)
+  console.log(obj.friend)
+
+  // var bindFoo = bar.bind3(foo, 'shirley')
+  // console.log(bindFoo())
+  
+  Function.prototype.call2 = function (context) {
+    // 将函数设为对象的属性
+    context.fn = this
+    var args = []
+    // args 未知个数，从2-最后一个，用数组循环
+    context.fn(args)
+    delete context.fn
+  }
+
+  
+
+  </script>
+  <script src="./eventbus.js"></script>
+  <script src="./promise.js"></script>
+</body>
+</html>

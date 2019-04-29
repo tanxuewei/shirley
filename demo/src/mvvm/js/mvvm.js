@@ -15,7 +15,8 @@ MVVM.prototype = {
       configurable: false,
       enumerable: true,
       get: function proxyGetter() {
-        return me._data[key];
+        // return me._data[key];
+        console.log('aa')
       },
       set: function proxySetter(newVal) {
         me._data[key] = newVal;
