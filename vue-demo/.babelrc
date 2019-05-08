@@ -18,6 +18,8 @@
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/plugin-syntax-dynamic-import",
     "@babel/plugin-proposal-json-strings",
-    "transform-vue-jsx"
+    "transform-vue-jsx",
+    ["import", { "libraryName": "ant-design-vue", "libraryDirectory": "es", "style": "css" }]
+
   ]
 }
