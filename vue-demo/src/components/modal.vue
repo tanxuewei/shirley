@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-  name: 's-modal',
+  name: 'sl-modal',
   data () {
     return {
       visible: false
