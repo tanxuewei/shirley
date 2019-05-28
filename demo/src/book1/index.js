@@ -95,5 +95,5 @@ function setup (x) {
 }
 
 var next = setup([1, 2, 3])
-console.log(next());
+// console.log(next());
 
