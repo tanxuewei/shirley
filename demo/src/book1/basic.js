@@ -204,5 +204,29 @@ Object.defineProperty(book, 'year', {
   }
 })
 
-book.year = 2005
-console.log(book.edition)  // 2
+book.year = 2003
+console.log(book)  // 2
+
+
+function testx (arg) {
+  var arg
+  console.log(arg)
+}
+
+testx(11)
+
+function insert (value) {
+  return { into: function (array) {
+    return { after: function (afterValue) {
+      array.splice(array.indexOf(afterValue) + 1, 0, value)
+      return array
+    }}
+  }}
+}
+
+console.log(insert(2).into([1, 3]).after(1)) // [1, 2, 3]
+
+let insert = (value) => ({ into: (array) => ({ after: (afterValue) => {
+  
+}})})
+
