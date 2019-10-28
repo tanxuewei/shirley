@@ -1,0 +1,502 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+  "actions": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "_class": "com.cloudbees.plugins.credentials.ViewCredentialsAction"
+    }
+  ],
+  "description": "",
+  "displayName": "SnailReader-Monkey",
+  "displayNameOrNull": null,
+  "fullDisplayName": "SnailReader-Monkey",
+  "fullName": "SnailReader-Monkey",
+  "name": "SnailReader-Monkey",
+  "url": "http://localhost:8080/job/SnailReader-Monkey/",
+  "buildable": true,
+  "builds": [
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 78,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/78/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 77,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/77/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 76,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/76/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 75,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/75/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 74,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/74/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 73,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/73/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 72,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/72/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 71,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/71/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 70,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/70/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 69,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/69/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 68,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/68/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 67,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/67/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 66,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/66/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 65,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/65/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 64,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/64/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 63,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/63/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 62,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/62/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 61,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/61/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 60,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/60/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 59,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/59/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 58,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/58/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 57,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/57/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 56,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/56/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 55,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/55/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 54,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/54/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 53,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/53/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 52,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/52/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 51,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/51/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 50,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/50/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 49,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/49/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 48,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/48/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 47,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/47/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 46,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/46/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 45,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/45/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 44,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/44/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 43,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/43/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 42,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/42/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 41,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/41/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 40,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/40/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 39,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/39/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 38,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/38/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 37,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/37/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 36,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/36/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 35,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/35/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 34,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/34/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 33,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/33/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 32,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/32/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 31,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/31/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 30,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/30/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 29,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/29/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 28,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/28/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 27,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/27/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 26,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/26/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 25,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/25/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 24,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/24/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 23,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/23/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 22,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/22/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 21,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/21/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 20,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/20/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 19,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/19/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 18,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/18/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 17,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/17/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 16,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/16/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 15,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/15/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 14,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/14/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 13,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/13/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 12,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/12/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 11,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/11/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 10,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/10/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 9,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/9/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 8,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/8/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 7,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/7/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 6,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/6/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 5,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/5/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 4,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/4/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 3,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/3/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 2,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/2/"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+      "number": 1,
+      "url": "http://localhost:8080/job/SnailReader-Monkey/1/"
+    }
+  ],
+  "color": "aborted",
+  "firstBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 1,
+    "url": "http://localhost:8080/job/SnailReader-Monkey/1/"
+  },
+  "healthReport": [
+    {
+      "description": "Build stability: No recent builds failed.",
+      "iconClassName": "icon-health-80plus",
+      "iconUrl": "health-80plus.png",
+      "score": 100
+    }
+  ],
+  "inQueue": false,
+  "keepDependencies": false,
+  "lastBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 78,
+    "url": "http://localhost:8080/job/SnailReader-Monkey/78/"
+  },
+  "lastCompletedBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 78,
+    "url": "http://localhost:8080/job/SnailReader-Monkey/78/"
+  },
+  "lastFailedBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 70,
+    "url": "http://localhost:8080/job/SnailReader-Monkey/70/"
+  },
+  "lastStableBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 51,
+    "url": "http://localhost:8080/job/SnailReader-Monkey/51/"
+  },
+  "lastSuccessfulBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 51,
+    "url": "http://localhost:8080/job/SnailReader-Monkey/51/"
+  },
+  "lastUnstableBuild": null,
+  "lastUnsuccessfulBuild": {
+    "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+    "number": 78,
+    "url": "http://localhost:8080/job/SnailReader-Monkey/78/"
+  },
+  "nextBuildNumber": 79,
+  "property": [
+    {
+      "_class": "hudson.model.ParametersDefinitionProperty",
+      "parameterDefinitions": [
+        {
+          "_class": "hudson.model.StringParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "AppVersion",
+            "value": ""
+          },
+          "description": "Git分支选择",
+          "name": "AppVersion",
+          "type": "StringParameterDefinition"
+        },
+        {
+          "_class": "hudson.model.ChoiceParameterDefinition",
+          "defaultParameterValue": {
+            "_class": "hudson.model.StringParameterValue",
+            "name": "test",
+            "value": "1"
+          },
+          "description": "",
+          "name": "test",
+          "type": "ChoiceParameterDefinition",
+          "choices": [
+            "1",
+            "2",
+            "3"
+          ]
+        }
+      ]
+    }
+  ],
+  "queueItem": null,
+  "concurrentBuild": true,
+  "resumeBlocked": false
+}

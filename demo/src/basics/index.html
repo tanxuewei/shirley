@@ -9,6 +9,7 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>基础</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
     .main {
       padding: 30px;
@@ -35,6 +36,7 @@
       哈哈哈
     </div>
   </div>
+  <p></p>
   <script>
     console.log('我是第一个安静善良的script')
   </script>
@@ -43,6 +45,14 @@
     console.log('我是html里的script')
   </script>
   <script src="index.js"></script>
+  <script>
+      $.getJSON("./jquery.json",function(result){
+        console.log(result)
+        $.each(result, function(i, field){
+          $("p").append(field + " ");
+        });
+      });
+    </script>
 </div>
 </body>
 </html>

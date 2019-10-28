@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>iframe</title>
+</head>
+<body>
+<div>
+  <div>hahahahahaah</div>
+  <!-- <iframe id="inlineFrameExample"
+    title="Inline Frame Example"
+    width="300"
+    height="200"
+    src="http://localhost:8888"> -->
+</iframe>
+
+</div>
+<script>
+  window.onload = () => {
+    // var src = 'http://localhost:8888/' + '#baba';
+    // document.getElementById('inlineFrameExample').src = src;
+
+    
+    // var iframe = document.getElementById("inlineFrameExample").contentWindow.document
+    // console.log(iframe)
+
+    // var iframe = document.getElementById("inlineFrameExample")
+    // iframe.contentWindow.location = "http://localhost:3333/book1/index.html";
+    // iframe.onload = function () {
+    //   console.log(iframe.contentWindow.name)
+    // }
+
+    var popup = window.open('http://localhost:8888', 'title')
+    popup.postMessage('Hello World!', 'http://localhost:8888')
+
+    window.addEventListener('message', function (e) {
+      alert(JSON.stringify(e.data))
+    }, false)
+  }
+</script>
+</body>
+</html>

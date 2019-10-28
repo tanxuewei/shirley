@@ -28,8 +28,18 @@ export default {
       'addProductToCart'
     ])
   },
+
+  props: {
+    list: Array,
+    default: () => []
+  },
+
   created () {
     this.$store.dispatch('products/getAllProducts')
+
+    this.list.map((item) => {
+      return item.name
+    })
   }
 }
 </script>

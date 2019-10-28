@@ -5,6 +5,7 @@
   "author": "shirley",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack-dev-server --port=1234"
   },
   "repository": {

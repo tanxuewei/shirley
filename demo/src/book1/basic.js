@@ -215,18 +215,36 @@ function testx (arg) {
 
 testx(11)
 
-function insert (value) {
-  return { into: function (array) {
-    return { after: function (afterValue) {
-      array.splice(array.indexOf(afterValue) + 1, 0, value)
-      return array
-    }}
-  }}
-}
+// function insert (value) {
+//   return { into: function (array) {
+//     return { after: function (afterValue) {
+//       array.splice(array.indexOf(afterValue) + 1, 0, value)
+//       return array
+//     }}
+//   }}
+// }
+
+
+let insert = (value) => ({ into: (array) => ({ after: (afterValue) => {
+  array.splice(array.indexOf(afterValue) + 1, 0, value)
+  return array
+}})})
 
 console.log(insert(2).into([1, 3]).after(1)) // [1, 2, 3]
 
-let insert = (value) => ({ into: (array) => ({ after: (afterValue) => {
-  
-}})})
+var list = [1, 2, 3, 4]
 
+var result = list.reduce((a, b) => a - b, 10)
+
+// console.log(result)
+
+const pipeline = (...funcs) =>
+  val => funcs.reduce((a, b) => {
+    return b(a)
+  }, val)
+
+const plus1 = a => a + 1
+const mult2 = a => a * 2
+const addThenMult = pipeline(plus1, mult2)
+
+addThenMult(10)
