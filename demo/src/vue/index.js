@@ -1,6 +1,22 @@
-new Vue({
+let vm = new Vue({
+  el: '#app',
   data: {
-    msg: 'hahaha'
+    msg: 'hello world',
+    obj: {
+      name: 'shirley',
+      age: 18
+    }
   },
-  el: '#app'
+  methods: {
+    sayHi () {
+      alert(this.msg)
+    },
+
+    editMsg () {
+      this.msg = 'i am new world'
+      this.sayHi()
+    }
+  }
 })
+
+vm.msg = '我是第一次修改后的msg'
