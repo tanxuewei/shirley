@@ -39,15 +39,17 @@ p.convert = function (key, val) {
   })
 }
 
-let data = {
-  msg: 'hello world',
-  user: {
-    name: 'shirley',
-    age: 18
-  },
-  list: []
-}
-let app = new Observer(data)
+module.exports = Observer
+
+// let data = {
+//   msg: 'hello world',
+//   user: {
+//     name: 'shirley',
+//     age: 18
+//   },
+//   list: []
+// }
+// let app = new Observer(data)
 // data.msg = 'new msg'
 // data.user.age = 19
 // data.user.home = 'hz'

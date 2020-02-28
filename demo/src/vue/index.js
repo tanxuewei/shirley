@@ -18,5 +18,6 @@ let vm = new Vue({
     }
   }
 })
+console.log(vm)
 
-vm.msg = '我是第一次修改后的msg'
+// vm.msg = '我是第一次修改后的msg'

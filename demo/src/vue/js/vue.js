@@ -1,20 +1,12 @@
 function Vue (options) {
-  this.options = options
-  this.$el = options.el
-  this.$data = options.data
-  this.methods = options.methods
-  this.init()
+  this._init(options)  
 }
 
-Vue.prototype.init = function () {
-  // 渲染页面暂时去掉
-  // this.renderDom(this.$el, this.$data.msg)
-}
-
-Vue.prototype.renderDom = function (node, val) {
-  if (typeof node === 'string') {
-    document.querySelector(node).innerText = val
-  }
+Vue.prototype = {
+  constructor: Vue,
+  ...require('./instance/init'),
+  ...require('./instance/compile'),
+  observer: {...require('./observe')}
 }
 
 window.Vue = Vue

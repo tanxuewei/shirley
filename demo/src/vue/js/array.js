@@ -1,30 +1,16 @@
-const aryMethods = ['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse'];
-const arrayAugmentations = [];
+const aryMethods = ['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse']
+const arrayAugmentations = []
 
-aryMethods.forEach((method)=> {
+aryMethods.forEach(method => {
+  let orginal = Array.prototype[method]
 
-    // 这里是原生Array的原型方法
-    let original = Array.prototype[method];
+  arrayAugmentations[method] = function () {
+    // 做监听
+    console.log('我被改变啦，越变越美啦')
+    return orginal
+  }
+})
 
-   // 将push, pop等封装好的方法定义在对象arrayAugmentations的属性上
-   // 注意：是属性而非原型属性
-    arrayAugmentations[method] = function () {
-        console.log('我被改变啦!');
-
-        // 调用对应的原生方法并返回结果
-        return original.apply(this, arguments);
-    };
-
-});
-
-let list = ['a', 'b', 'c'];
-// 将我们要监听的数组的原型指针指向上面定义的空数组对象
-// 别忘了这个空数组的属性上定义了我们封装好的push等方法
-list.__proto__ = arrayAugmentations;
-console.log(list.push)
-list.push('d');  // 我被改变啦！ 4
-
-// 这里的list2没有被重新定义原型指针，所以就正常输出
-let list2 = ['a', 'b', 'c'];
-console.log(list2.push)
-list2.push('d');  // 4
+let list = [1, 2, 3]
+list.__proto__ = arrayAugmentations
+list.push(4)
