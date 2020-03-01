@@ -1,3 +1,4 @@
+/* -------------------------------------------- */
 // ES5
 function Node (key) {
   this.key = key
@@ -114,7 +115,7 @@ binaryTree.bfs()
 
 // console.log(binaryTree.result)
 
-
+/* -------------------------------------------- */
 const data = [
   {
     name: 'a',
@@ -176,25 +177,43 @@ function getName2(data) {
 // console.log(getName(data))
 // console.log(getName2(data))
 
+/* -------------------------------------------- */
 
-// 给定 nums = [2, 7, 11, 15], target = 9
+function TreeNode (val) {
+  this.val = val
+  this.left = null
+  this.rignt = null
+}
 
-// 因为 nums[0] + nums[1] = 2 + 7 = 9
-// 所以返回 [0, 1]
+class BinaryTree2 {
+  constructor (list) {
+    this.root = null
+    this.list = list || []
+    this.renderTree()
+  }
 
-function sum (nums, target) {
-  let temp = []
-  for (let i = 0, len = nums.length; i < len; i++) {
-    let dif = target - nums[i]
+  renderTree () {
+    this.list.forEach(val => {
+      this.insert(val)
+    })
+  }
 
-    if (temp[dif] != undefined) {
-      return [temp[dif], i]
+  insert (val) {
+    let newNode = new TreeNode(val)
+    if (this.root === null) {
+      this.root = newNode
+    } else {
+      this.insertNode(this.root, newNode)
     }
+  }
 
-    temp[nums[i]] = i
+  insertNode (node, newNode) {
+    // TODO 在想怎么搞呢
   }
 }
 
-nums = [2, 7, 11, 15], target = 9
+var nodes = [8,3,10,1,6,14,4,7,13];
+var binaryTree = new BinaryTree2(nodes)
+console.log(binaryTree.root)
 
-console.log(sum(nums, target))
+var root = [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
