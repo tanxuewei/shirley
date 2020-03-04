@@ -93,4 +93,4 @@ var rankTeams = function(votes) {
 };
 
 let votes = ["ABC","ACB","ABC","ACB","ACB"]
-console.log(rankTeams(votes))
+// console.log(rankTeams(votes))

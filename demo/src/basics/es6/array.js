@@ -57,3 +57,12 @@ newObj.a // 1
 
 obj.c.name = 'new'
 newObj.c.name // 'new'
+
+// 参数 x 与 函数内部变量 x 同名，x 取参数值，如果 x 被复制，x 为 赋值后的 值
+function test (x) {
+  console.log(x)
+  var x = 10
+
+}
+
+test(30)
