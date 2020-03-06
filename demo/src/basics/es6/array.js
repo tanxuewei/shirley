@@ -1,3 +1,4 @@
+// demo大合集
 var users = [
   {
     id: 1,
@@ -65,4 +66,46 @@ function test (x) {
 
 }
 
-test(30)
+// test(30)
+
+// 方法一和方法二处理闭包
+for (var i = 1; i <= 5; i++) {
+  setTimeout((function timer(i) {
+    return function () {
+      // console.log(i);
+    }
+  })(i), i * 1000);
+}
+
+for (var i = 1; i <= 5; i++) {
+  (function (i) {
+    setTimeout(function timer() {
+        // console.log(i);
+    }, i * 1000);
+  })(i)
+}
+
+function Person (name) {
+  this.name = name
+  return {
+    a: 5
+  }
+}
+
+Person.prototype.getName = function () {
+  return this.name
+}
+
+var objectFactory = function () {
+  var obj = {}
+  var Constructor = [].shift.call(arguments)
+  obj.__proto__ = Constructor.prototype
+  var result = Constructor.apply(obj, arguments)
+
+  return typeof result === 'object' ? result : obj
+}
+
+// console.log(objectFactory(Person, 'shirley'))
+
+var person = new Person('haha')
+console.log(person)

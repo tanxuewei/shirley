@@ -5,9 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ES6</title>
+  <style>
+    div {
+  border: 1px solid #eee;
+}
+div > ul {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+div:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+  </style>
 </head>
 <body>
   <div id="app"></div>
+  <div>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
   <!-- 2020.02.28 -->
   <script src="./array.js"></script>
   <!-- <script src="./leetcode.js"></script> -->
