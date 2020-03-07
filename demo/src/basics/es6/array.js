@@ -87,9 +87,6 @@ for (var i = 1; i <= 5; i++) {
 
 function Person (name) {
   this.name = name
-  return {
-    a: 5
-  }
 }
 
 Person.prototype.getName = function () {
@@ -108,4 +105,6 @@ var objectFactory = function () {
 // console.log(objectFactory(Person, 'shirley'))
 
 var person = new Person('haha')
-console.log(person)
+// console.log(person)
+
+console.log(Math.max([1, 2, 5, 9]))
