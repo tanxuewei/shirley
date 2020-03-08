@@ -107,4 +107,106 @@ var objectFactory = function () {
 var person = new Person('haha')
 // console.log(person)
 
-console.log(Math.max([1, 2, 5, 9]))
+// console.log(Math.max([1, 2, 5, 9]))
+
+var Type = {}
+var typeList = ['String', 'Array', 'Number']
+
+for (var i = 0, len = typeList.length; i < len; i++) {
+  var type = typeList[i];
+  (function (type) {
+    Type[`is${type}`] = function (obj) {
+      return Object.prototype.toString.call(obj) === `[object ${type}]`
+    }
+  })(type)
+}
+// console.log(Type.isArray(4))
+
+/* 高阶函数 */
+Function.prototype.before = function (beforeFn) {
+  var self = this
+  return function () {
+    beforeFn.apply(this, arguments)
+    return self.apply(this, arguments)
+  }
+}
+
+Function.prototype.after = function (afterFn) {
+  var self = this
+  return function () {
+    var ret = self.apply(this, arguments)
+    afterFn.apply(this, arguments)
+    return ret
+  }
+}
+
+var func = function () {
+  console.log(2)
+}
+
+func = func.before(function () {
+  console.log(1)
+}).after(function () {
+  console.log(3)
+})
+
+// func()
+
+var currying = function (fn) {
+  var args = []
+
+  return function () {
+    if (arguments.length === 0) {
+      return fn.apply(this, args)
+    } else {
+      [].push.apply(args, arguments)
+      return arguments.callee
+    }
+  }
+}
+
+var cost = (function () {
+  var money = 0
+  return function () {
+    for (var i = 0, len = arguments.length; i < len; i++) {
+      money += arguments[i]
+    }
+    return money
+  }
+})()
+
+var cost = currying(cost)
+
+cost(10)
+cost(20)
+// console.log(cost())
+
+var throttle = function (fn, interval) {
+  var _self = fn,
+    timer,
+    firstTime = true
+
+  return function () {
+    var args = arguments,
+      _me = this
+
+    if (firstTime) {
+      _self.apply(_me, args)
+      return firstTime = false
+    }
+
+    if (timer) {
+      return false
+    }
+
+    timer = setTimeout(function () {
+      clearInterval(timer)
+      timer = null
+      _self.apply(_me, args)
+    }, interval || 500)
+  }
+}
+
+window.onresize = throttle(function () {
+  console.log(1)
+}, 500)
