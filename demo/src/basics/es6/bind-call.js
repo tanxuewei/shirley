@@ -33,7 +33,7 @@ Function.prototype.bind2 = function (context) {
   return function () {
     var args = [].slice.call(arguments)
     args = bindArgs.concat(args)
-    self.apply(context, args)
+    return self.apply(context, args)
   }
 }
 

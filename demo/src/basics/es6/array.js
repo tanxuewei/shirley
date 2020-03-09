@@ -207,6 +207,69 @@ var throttle = function (fn, interval) {
   }
 }
 
-window.onresize = throttle(function () {
-  console.log(1)
-}, 500)
+// window.onresize = throttle(function () {
+//   console.log(1)
+// }, 500)
+// -------------
+var event = {
+  clientList: {},
+  listen: function (key, fn) {
+    if (!this.clientList[key]) {
+      this.clientList[key] = []
+    }
+    this.clientList[key].push(fn)
+  },
+  trigger: function () {
+    var key = [].shift.call(arguments);
+    var fns = this.clientList[key]
+
+    if (!fns || fns.length === 0) return
+
+    for (var i = 0, fn; fn = fns[i++];) {
+      fn.apply(this, arguments)
+    }
+  },
+  remove: function (key, fn) {
+    var fns = this.clientList[key]
+
+    if (!fns) return false
+
+    if (!fn) { // 没有fn表示移除所有订阅
+      fns && (fns.length = 0);
+    } else {
+      for (var i = 0, len = fns.length; i < len; i++ ) {
+        var _fn = fns[i]
+        if (_fn === fn) {
+          fns.splice(i, 1)
+        }
+      }
+    }
+  }
+}
+
+var installEvent = function (obj) {
+  for (var key in event) {
+    obj[key] = event[key]
+  }
+}
+
+var salesOffices = {}
+installEvent(salesOffices)
+
+salesOffices.listen('squareMeter88', function (price) {
+  console.log('价格=' + price)
+})
+
+salesOffices.listen('squareMeter100', function (price) {
+  console.log('价格=' + price)
+})
+
+salesOffices.trigger('squareMeter88', 20000)
+salesOffices.trigger('squareMeter100', 30000)
+
+// 删除订阅
+salesOffices.listen('squareMeter100', f1 = function (price) {
+  console.log('价格=' + price)
+})
+salesOffices.remove('squareMeter100', f1)
+salesOffices.trigger('squareMeter100', 30000)
